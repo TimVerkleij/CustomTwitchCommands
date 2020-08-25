@@ -8,7 +8,7 @@ const app = Express();
 app.use(cookieParser());
 app.use(bodyParser());
 
-// app.use(Express.static('public/'));
+app.use(Express.static('public/'));
 
 app.use(require('./routes/api'));
 
