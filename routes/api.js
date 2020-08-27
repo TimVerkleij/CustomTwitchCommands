@@ -7,10 +7,15 @@ router.get('/customcommands/queue/', (req, res) => {
     db.find().make(function(filter) {
         filter.callback(function(err, response) {
             var answer = "1v1 queue: "
-            response.forEach(myFunction);
-            function myFunction(value) {
-                answer = answer + value.user + " - "
+            if(response.length >= 1 ) {
+                response.forEach(myFunction);
+                function myFunction(value) {
+                    answer = answer + value.user + " - "
+                }
+            } else{
+                answer = "The queue is empty. Redeem a 1v1 with your channel points and then one of the mods will add you to the queue."
             }
+            
             res.send(answer)
         });
     });

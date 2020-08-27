@@ -12,4 +12,5 @@ app.use(Express.static('public/'));
 
 app.use(require('./routes/api'));
 
-app.listen(process.env.PORT);
+// app.listen(process.env.PORT);
+app.listen(8080);
