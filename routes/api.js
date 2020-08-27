@@ -13,7 +13,7 @@ router.get('/customcommands/queue/', (req, res) => {
                     answer = answer + value.user + " - "
                 }
             } else{
-                answer = "The queue is empty. Redeem a 1v1 with your channel points and then one of the mods will add you to the queue."
+                answer = "The queue is empty. Redeem a 1v1 with your channel points and wait for one of the mods to add you to the queue."
             }
             
             res.send(answer)
