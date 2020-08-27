@@ -12,4 +12,4 @@ app.use(Express.static('public/'));
 
 app.use(require('./routes/api'));
 
-app.listen(8080, () => console.info('Webserver is listening http://localhost:8080/'));
+app.listen(process.env.PORT);
