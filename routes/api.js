@@ -61,11 +61,9 @@ router.get('/customcommands/penis/:data', (req, res) => {
     if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming')
         r = '13';
     if (r)
-        user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!';
+        res.send(user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!');
     else
-        user + ' has a penis length of ' + Math.floor(Math.random() * 11 + 1) + ' inches';
-
-
+        res.send(user + ' has a penis length of ' + Math.floor(Math.random() * 11 + 1) + ' inches');
 });
 
 
