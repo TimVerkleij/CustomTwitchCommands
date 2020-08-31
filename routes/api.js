@@ -53,4 +53,10 @@ router.get('/customcommands/adduser/', (req, res) => {
 
 
 
+
+router.get('/customcommands/penis/', (req, res) => {
+   res.send("testing")
+});
+
+
 module.exports = router;
