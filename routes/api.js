@@ -7,15 +7,16 @@ router.get('/customcommands/queue/', (req, res) => {
     db.find().make(function(filter) {
         filter.callback(function(err, response) {
             var answer = "1v1 queue: "
-            if(response.length >= 1 ) {
+            if (response.length >= 1) {
                 response.forEach(myFunction);
+
                 function myFunction(value) {
                     answer = answer + value.user + " - "
                 }
-            } else{
+            } else {
                 answer = "The queue is empty. Redeem a 1v1 with your channel points and wait for one of the mods to add you to the queue."
             }
-            
+
             res.send(answer)
         });
     });
@@ -35,10 +36,10 @@ router.get('/customcommands/deluser/:data', (req, res) => {
         .where('user', '=', user)
         .callback(function(error, found) {
             if (found) {
-                 res.send(user + " has been removed from the list") 
-                } else {
-                    res.send("That user was not found")
-                }
+                res.send(user + " has been removed from the list")
+            } else {
+                res.send("That user was not found")
+            }
         });
 });
 
@@ -54,8 +55,17 @@ router.get('/customcommands/adduser/', (req, res) => {
 
 
 
-router.get('/customcommands/penis/', (req, res) => {
-   res.send("testing")
+router.get('/customcommands/penis/:data', (req, res) => {
+    var user = req.params.data;
+    var r = false;
+    if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming')
+        r = '13';
+    if (r)
+        user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!';
+    else
+        user + ' has a penis length of ' + Math.floor(Math.random() * 11 + 1) + ' inches';
+
+
 });
 
 
