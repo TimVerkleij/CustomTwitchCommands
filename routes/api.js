@@ -63,6 +63,9 @@ router.get('/customcommands/adduser/', (req, res) => {
 
 router.get('/customcommands/penis/:data', (req, res) => {
     var user = req.params.data;
+    if (user.charAt(0) == "@") {
+        user = user.slice(0, 0) + user.slice(1);
+    }
     var r = false;
     if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming')
         r = '13';
