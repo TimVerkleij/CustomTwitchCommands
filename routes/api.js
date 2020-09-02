@@ -76,4 +76,10 @@ router.get('/customcommands/penis/:data', (req, res) => {
 });
 
 
+router.get('', (req, res) => {
+   var test1 = req.params.test;
+   var test2 = req.params.testing;
+   res.send(test1, test2);
+});
+
 module.exports = router;

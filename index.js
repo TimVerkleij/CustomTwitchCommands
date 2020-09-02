@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = Express();
 
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(Express.static('public/'));
 
