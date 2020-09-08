@@ -84,7 +84,7 @@ router.get('/customcommands/penis/mrpoop/:data', (req, res) => {
     const r = Math.floor(Math.random() * 10)
     if (r == 0)
         res.send('Can\'t find your penis Kappa')
-    else if (r <= 5)
+    else if (r <= 4)
         res.send('Hold on, give me a second. I gotta get my magnifying glass for this one Kappa \n ' + user + ' has a wopping ' + r + ' inches LUL')
     else
         res.send(user + ' has a penis length of ' + r + ' inches SeemsGood')
