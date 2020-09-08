@@ -76,10 +76,20 @@ router.get('/customcommands/penis/:data', (req, res) => {
 });
 
 
-router.get('', (req, res) => {
-   var test1 = req.params.test;
-   var test2 = req.params.testing;
-   res.send(test1, test2);
+router.get('/customcommands/penis/mrpoop/:data', (req, res) => {
+    var user = req.params.data;
+    if (user.charAt(0) == "@") {
+        user = user.slice(0, 0) + user.slice(1);
+    }
+    const r = Math.floor(Math.random() * 10)
+    if (r == 0)
+        res.send('Can\'t find your penis Kappa')
+    else if (r <= 5)
+        res.send('Hold on, give me a second. I gotta get my magnifying glass for this one Kappa \n ' + user + ' has a wopping ' + r + ' inches LUL')
+    else
+        res.send(user + ' has a penis length of ' + r + ' inches SeemsGood')
 });
+
+
 
 module.exports = router;
