@@ -76,7 +76,7 @@ router.get('/customcommands/penis/:data', (req, res) => {
 });
 
 
-router.get('/customcommands/penis/mrpoop/:data', (req, res) => {
+router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
         user = user.slice(0, 0) + user.slice(1);
