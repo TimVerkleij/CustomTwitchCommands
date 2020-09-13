@@ -25,7 +25,7 @@ router.get('/customcommands/queue/', (req, res) => {
 router.get('/customcommands/adduser/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
-        user = user.slice(0, 0) + user.slice(1).toLowerCase();
+        user = user.slice(1).toLowerCase();
     }
     db.insert({
         user
@@ -36,7 +36,7 @@ router.get('/customcommands/adduser/:data', (req, res) => {
 router.get('/customcommands/deluser/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
-        user = user.slice(0, 0) + user.slice(1).toLowerCase();
+        user = user.slice(1).toLowerCase();
     }
     db.remove()
         .where('user', '=', user)
@@ -64,7 +64,7 @@ router.get('/customcommands/adduser/', (req, res) => {
 router.get('/customcommands/penis/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
-        user = user.slice(0, 0) + user.slice(1);
+        user = user.slice(1);
     }
     var r = false;
     if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming')
@@ -79,7 +79,7 @@ router.get('/customcommands/penis/:data', (req, res) => {
 router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
-        user = user.slice(0, 0) + user.slice(1);
+        user = user.slice(1);
     }
     const r = Math.floor(Math.random() * 10)
     if (r == 0)
