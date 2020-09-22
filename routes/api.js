@@ -1,6 +1,7 @@
 const router = require('express').Router();
 var NoSQL = require('nosql');
 var db = NoSQL.load('./local.db.nosql');
+var quickChatDatabase = NoSQL.load('./quickchats.nosql');
 
 
 router.get('/customcommands/queue/', (req, res) => {
@@ -26,6 +27,8 @@ router.get('/customcommands/adduser/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
         user = user.slice(1).toLowerCase();
+    } else {
+        user.toLowerCase()
     }
     db.insert({
         user
@@ -37,6 +40,8 @@ router.get('/customcommands/deluser/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
         user = user.slice(1).toLowerCase();
+    } else{
+        user.toLowerCase()
     }
     db.remove()
         .where('user', '=', user)
@@ -48,6 +53,15 @@ router.get('/customcommands/deluser/:data', (req, res) => {
             }
         });
 });
+
+
+router.get('/customcommands/quickchat', (req, res) => {
+    quickChatDatabase.find().make(function(filter) {
+        filter.callback(function(err, response) {
+            res.send(response[Math.floor(Math.random() * response.length)])
+        });
+    });
+})
 
 
 router.get('/customcommands/deluser/', (req, res) => {
