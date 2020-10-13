@@ -97,12 +97,12 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
     }
     const r = Math.floor(Math.random() * 10)
     if (r == 0)
-        res.send("Are you sure you're a guy, because I can't find you penis Kappa")
-    else if (r <= 4)
+        res.send("I'm not a microbiologist Kappa")
+    else if (r <= 5)
         // res.send('Hold on, give me a second. I gotta get my magnifying glass for this one Kappa \n ' + user + ' has a wopping ' + r + ' inches LUL')
-        res.send(`Alright, let's see what this guy has in his pants. Kappa cmonBruh I almost almost thought you were a girl. ${user} only has a ${r} inch dick LUL Poor guy.`)
+        res.send(`What is √${r**2}? Yea that's right, it's the size of your small ${r} inch dick.`)
     else
-        res.send(`${user} clearly has a boner LUL he is packin' ${r} inches PogChamp`)
+        res.send(`lmao, only ${r} inches, mine is bigger than ${user}'s.`)
 });
 
 
