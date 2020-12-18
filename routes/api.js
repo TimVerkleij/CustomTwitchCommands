@@ -105,6 +105,9 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
         res.send(`lmao, only ${r} inches, mine is bigger than ${user}'s.`)
 });
 
+router.get('/customcommands/stitch', (req, res) => {
+    res.send("BlastBucket Loves Stitch's streams :D")
+})
 
 
 module.exports = router;
