@@ -7,13 +7,18 @@ var quickChatDatabase = NoSQL.load('./quickchats.nosql');
 router.get('/customcommands/queue/', (req, res) => {
     db.find().make(function(filter) {
         filter.callback(function(err, response) {
-            var answer = "1v1 queue: "
+            let answer = "1v1 queue: "
             if (response.length >= 1) {
-                response.forEach(myFunction);
 
-                function myFunction(value) {
-                    answer = answer + value.user + " - "
+                for (let i = 0; i < response.length; i++) {
+                    let user = response[i].user;
+                    if(i !== response.length - 1) {
+                        answer = answer + user + " - "
+                    } else {
+                        answer = answer + user
+                    }
                 }
+
             } else {
                 answer = "The queue is empty. Redeem a 1v1 with your channel points and wait for one of the mods to add you to the queue."
             }
