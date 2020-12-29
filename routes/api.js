@@ -29,11 +29,9 @@ router.get('/customcommands/queue/', (req, res) => {
 });
 
 router.get('/customcommands/adduser/:data', (req, res) => {
-    var user = req.params.data;
+    var user = req.params.data.toLowerCase();
     if (user.charAt(0) == "@") {
-        user = user.slice(1).toLowerCase();
-    } else {
-        user.toLowerCase()
+        user = user.slice(1);
     }
     db.insert({
         user
@@ -42,11 +40,9 @@ router.get('/customcommands/adduser/:data', (req, res) => {
 });
 
 router.get('/customcommands/deluser/:data', (req, res) => {
-    var user = req.params.data;
+    var user = req.params.data.toLowerCase();
     if (user.charAt(0) == "@") {
-        user = user.slice(1).toLowerCase();
-    } else{
-        user.toLowerCase()
+        user = user.slice(1);
     }
     db.remove()
         .where('user', '=', user)
