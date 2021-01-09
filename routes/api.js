@@ -107,7 +107,7 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
 });
 
 router.get('/customcommands/stitch', (req, res) => {
-    res.send("BlastBucket Loves Stitch's streams :D")
+    res.send(`BlastBucket rates you a ${Math.floor(Math.random() * 10) + 1}/10 SeemsGood .`)
 })
 
 
