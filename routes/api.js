@@ -107,7 +107,12 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
 });
 
 router.get('/customcommands/stitch', (req, res) => {
-    res.send(`BlastBucket rates you a ${Math.floor(Math.random() * 10) + 1}/10 SeemsGood .`)
+    let randomNumber = Math.floor(Math.random() * 10) + 1
+    if(randomNumber >= 6){
+        res.send(`BlastBucket rates you a ${Math.floor(Math.random() * 10) + 1}/10 SeemsGood`)
+    } else {
+        res.send(`BlastBucket rates you a ${Math.floor(Math.random() * 10) + 1}/10 NotLikeThis`)
+    }
 })
 
 
