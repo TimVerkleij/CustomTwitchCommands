@@ -97,11 +97,13 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
         user = user.slice(1);
     }
     const r = Math.floor(Math.random() * 10)
+    const q = Math.floor(Math.random() * 234) + 22
     if (r == 0)
         res.send("I'm not a microbiologist Kappa")
     else if (r <= 5)
         // res.send('Hold on, give me a second. I gotta get my magnifying glass for this one Kappa \n ' + user + ' has a wopping ' + r + ' inches LUL')
-        res.send(`What is √${r**2}? Yea that's right, it's the size of your small ${r} inch dick.`)
+        // res.send(`What is √${r**2}? Yea that's right, it's the size of your small ${r} inch dick.`)
+        res.send(`What is ${r*q} divided by ${q}? It's the size of your small ${r} inch dick LUL`)
     else
         res.send(`lmao, only ${r} inches, mine is bigger than ${user}'s.`)
 });
