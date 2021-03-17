@@ -1,8 +1,9 @@
 const router = require('express').Router();
-var NoSQL = require('nosql');
-var db = NoSQL.load('./local.db.nosql');
-var quickChatDatabase = NoSQL.load('./quickchats.nosql');
-
+const fetch = require('node-fetch');
+const NoSQL = require('nosql');
+const db = NoSQL.load('./local.db.nosql');
+const quickChatDatabase = NoSQL.load('./quickchats.nosql');
+const rankDatabase = NoSQL.load('./rankDatabase.nosql');
 
 router.get('/customcommands/queue/', (req, res) => {
     db.find().make(function(filter) {
@@ -73,7 +74,21 @@ router.get('/customcommands/adduser/', (req, res) => {
     res.send("Please enter a user to add to the queue")
 });
 
+router.get('/customcommands/rank', (req, res) => {
+    rankDatabase.find().make(function(filter) {
+        filter.callback(function(err, response) {
+            res.send(response)
+        });
+    });
 
+    getRank()
+
+    async function getRank() {
+        let ranks = await fetch('https://api.yannismate.de/rank/epic/tv-Mr_Poop?playlists=ranked_1v1,ranked_2v2,ranked_3v3')
+        let body = await ranks.text();
+        rankDatabase.update(body)
+    }
+})
 
 
 router.get('/customcommands/penis/:data', (req, res) => {
