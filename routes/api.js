@@ -77,7 +77,7 @@ router.get('/customcommands/adduser/', (req, res) => {
 router.get('/customcommands/rank', (req, res) => {
     rankDatabase.find().make(function(filter) {
         filter.callback(function(err, response) {
-            res.send(response)
+            res.send(response[0])
         });
     });
 
