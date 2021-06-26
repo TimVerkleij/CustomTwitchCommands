@@ -106,7 +106,7 @@ router.get('/customcommands/penis/:data', (req, res) => {
 });
 
 
-router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
+router.get('/customcommands/mrpoop/penis/old/:data', (req, res) => {
     var user = req.params.data;
     if (user.charAt(0) == "@") {
         user = user.slice(1);
@@ -122,6 +122,22 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
     else
         res.send(`lmao, only ${r} inches, mine is bigger than ${user}'s.`)
 });
+
+router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
+    var user = req.params.data;
+    if (user.charAt(0) == "@") {
+        user = user.slice(1);
+    }
+    const r = Math.floor(Math.random() * 10)
+    if(user.toLowerCase() === "b4ntony" || user.toLowerCase() === "ant")
+        return res.send(`A tiny dick for a tiny man 🐜`)
+    if (r == 0)
+        res.send(`Some things are better to be kept secret. Nobody wants to know how short ${user}'s weener is.`)
+    else if (r <= 5)
+        res.send(`That is one tiny ass penis you got there ${user}, only ${r} inches Kappa`)
+    else 
+        res.send(`Damnn bro, you're packin' SeemsGood`)
+})
 
 router.get('/customcommands/stitch', (req, res) => {
     let randomNumber = Math.floor(Math.random() * 10) + 1
