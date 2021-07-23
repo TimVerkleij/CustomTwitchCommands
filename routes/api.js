@@ -129,6 +129,8 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
         user = user.slice(1);
     }
     const r = Math.floor(Math.random() * 10)
+    const q = Math.floor(Math.random() * 234) + 22
+
     if(user.toLowerCase() === "b4ntony" || user.toLowerCase() === "ant")
         return res.send(`A tiny dick for a tiny man 🐜`)
     if (r == 0)
