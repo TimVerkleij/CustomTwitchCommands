@@ -132,16 +132,18 @@ router.get('/customcommands/mrpoop/penis/:data', (req, res) => {
     const q = Math.floor(Math.random() * 234) + 22
 
     if(user.toLowerCase() === "b4ntony" || user.toLowerCase() === "ant")
-        return res.send(`A tiny dick for a tiny man 🐜`)
+        return res.send(`Bigger than yours Kappa`)
     if (r == 0)
         // res.send(`Some things are better to be kept secret. Nobody wants to know how short ${user}'s weener is.`)
         res.send('Hold on, give me a second. I gotta get my magnifying glass for this one Kappa \n ' + user + ' has a wopping ' + r + ' inches LUL')
-    else if (r <= 5)
+    else if (r <= 6)
         // res.send(`That is one tiny ass penis you got there ${user}, only ${r} inches Kappa`)
-        res.send(`What is ${r*q} divided by ${q}? It's the size of your ${r} inch dick LUL`)
+        // res.send(`What is ${r*q} divided by ${q}? It's the size of your ${r} inch dick LUL`)
+        res.send(`Some things are better to be kept secret. Nobody wants to know how short ${user}'s weener is.`)
 
     else 
-        res.send(`Damnn bro, you're packin' SeemsGood`)
+        // res.send(`Damnn bro, you're packin' SeemsGood`)
+        res.send(`You could apply to Brazzers with that thing`)
 })
 
 router.get('/customcommands/stitch', (req, res) => {
