@@ -97,7 +97,7 @@ router.get('/customcommands/penis/:data', (req, res) => {
         user = user.slice(1);
     }
     let r = false;
-    if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming')
+    if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming' || user == 'duckdust' || user == 'blast')
         r = '8';
     if (r)
         res.send(user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!');
