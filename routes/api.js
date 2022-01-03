@@ -92,12 +92,12 @@ router.get('/customcommands/rank', (req, res) => {
 
 
 router.get('/customcommands/penis/:data', (req, res) => {
-    var user = req.params.data;
+    var user = req.params.data.toLowerCase();
     if (user.charAt(0) == "@") {
         user = user.slice(1);
     }
     let r = false;
-    if (user == 'silvr' || user == 'Silvrback' || user == 'SilvrbackRL' || user == 'blastbucketgaming' || user == 'duckdust' || user == 'blast')
+    if (user == 'silvr' || user == 'silvrback' || user == 'silvrbackrl' || user == 'blastbucketgaming' || user == 'duckdust' || user == 'blast')
         r = '8';
     if (r)
         res.send(user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!');
