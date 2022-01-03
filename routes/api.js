@@ -96,14 +96,24 @@ router.get('/customcommands/penis/:data', (req, res) => {
     if (user.charAt(0) == "@") {
         user = user.slice(1);
     }
-    let r = false;
-    if (user == 'silvr' || user == 'silvrback' || user == 'silvrbackrl' || user == 'blastbucketgaming' || user == 'duckdust' || user == 'blast' || user == 'blastbucket')
-        r = '8';
-    if (r)
-        res.send(user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!');
-    else
-        res.send(user + ' has a penis length of ' + Math.floor(Math.random() * 6 + 1) + ' inches');
-});
+    let r = false
+    if (user == 'silvr' || user == 'silvrback' || user == 'silvrbackrl' || user == 'blastbucketgaming' || user == 'duckdust' || user == 'blast' || user == 'blastbucket') {
+        r = 8
+    }
+    if (user == 'melon' || user == 'thewatermelonlife') {
+        r = 9
+    }
+    if (r) {
+        if (r == 9) {
+            res.send(`Women don't have dicks Kappa`)
+        } else {
+            res.send(user + ' has a penis length of ' + r + ' inches!! ' + user + ' has the biggest dick!')
+        }
+    }
+    else {
+        res.send(user + ' has a penis length of ' + Math.floor(Math.random() * 6 + 1) + ' inches')
+    }
+})
 
 
 router.get('/customcommands/mrpoop/penis/old/:data', (req, res) => {
