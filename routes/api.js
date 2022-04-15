@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('express/lib/response');
 const fetch = require('node-fetch');
 const NoSQL = require('nosql');
 const db = NoSQL.load('./local.db.nosql');
@@ -163,6 +164,11 @@ router.get('/customcommands/stitch', (req, res) => {
     } else {
         res.send(`BlastBucket rates you a ${Math.floor(Math.random() * 10) + 1}/10 NotLikeThis`)
     }
+})
+
+router.get('/customcommands/randomValorantChallenge', async (req, res) => {
+    let response = await fetch('https://www.diah.info/valorant/roulette/retrieve.php?').then( v => { return JSON.parse(v.body._readableState.buffer.head.data.toString())})
+    res.send(response.description)
 })
 
 

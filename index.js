@@ -14,3 +14,4 @@ app.use(require('./routes/api'));
 
 app.listen(process.env.PORT);
 // app.listen(8080);
+console.log('http://localhost:8080')
