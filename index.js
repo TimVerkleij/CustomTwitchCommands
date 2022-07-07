@@ -1,5 +1,7 @@
 const Express = require('express');
 
+require('dotenv').config();
+
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
@@ -11,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(Express.static('public/'));
 
 app.use(require('./routes/api'));
+app.use(require('./routes/queue'));
 
 app.listen(process.env.PORT);
 // app.listen(8080);
-console.log('http://localhost:8080')
+console.log(`http://localhost:${process.env.PORT}`)
