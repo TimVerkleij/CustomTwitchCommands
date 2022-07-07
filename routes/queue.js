@@ -15,7 +15,7 @@ router.get('/v2/list/', (req, res) => {
                 for (let i = 0; i < queueLength; i++) {
                     let user = response[i].user;
                     if (i !== queueLength - 1) {
-                        answer += user + " - "
+                        answer += user + ", "
                     } else {
                         answer += user
                     }
