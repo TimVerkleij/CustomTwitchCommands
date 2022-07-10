@@ -59,5 +59,30 @@ router.get('/v2/queue/leave/:user', (req, res) => {
         })
 })
 
+router.get('/v2/queue/next/', (req, res) => {
+    const amount = parseInt(req.query.amount)
+    const skips = amount ? (
+        amount > 3 ? 3 : (
+            amount < 0 ? 1 : amount
+        )
+    ) : 1
+
+    const users = []
+    db.find().make(function (filter) {
+        filter.take(skips)
+        filter.callback(function (err, response) {
+            response.forEach(user => {
+                users.push(user.user)
+            })
+
+            db.remove()
+                .in('user', users)
+                .callback(function () {
+                    res.send(`The following users were removed from the queue: ${users.join(', ')}`)
+                })
+        })
+    })
+})
+
 
 module.exports = router;
