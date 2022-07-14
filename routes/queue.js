@@ -43,7 +43,7 @@ router.get('/v2/queue/join/:user', (req, res) => {
     queueIsEnabled.find().make(function (filter) {
         filter.callback(function (err, response) {
             if (response.length == 0 || response[0].enabled == false) {
-                res.send("The queue is disabled. Use !enable-queue to enable it.")
+                res.send("The queue is disabled. Use !toggleq to enable it.")
             } else {
                 var user = req.params.user.toLowerCase();
                 db.insert({
